@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<div class="row mt-4">
+  <div class="col-md-12">
+    <h2 class="text-center"> Pedidos</h2>
+  </div>
+</div>
+<div class="row pl-2">
+  <div class="col-md-3" *ngFor="let pedido of pedidos; let i= index">
+    <div class="card m-4" >
+      <h5 class="card-title text-center">{{pedido.nomeProduto}}</h5>
+      <div class="card-body">
+        <p class="card-text">{{pedido.descricao}}</p>
+        <p class="card-text">status:{{pedido.statusProduto}}</p>
+        <p class="card-text">dz: ${{pedido.valorProduto}}</p>
+      </div>
+    </div>
+  </div>
+</div>

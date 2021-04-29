@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div class="row mt-4">
+  <div class="col-md-12">
+    <h2 class="text-center"> Extrato</h2>
+  </div>
+</div>
+<div class="row mt-1 m-1">
+  <div class="col-md-12">
+    <div class="list-group">
+      <a  class="list-group-item list-group-item-action flex-column align-items-start"
+      *ngFor="let pedido of pedidos; let i= index">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{pedido.nomeProduto}}</h5>
+          <small>{{pedido.tempo}}dias</small>
+        </div>
+        <p class="mb-1">{{pedido.descricao}}</p>
+        <small>dz: {{pedido.valorProduto}}</small>
+      </a>
+      <div class="row mt-2">
+        <div class="col-md-12">
+          <h5 class="mb-1"> Total dz: {{total}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

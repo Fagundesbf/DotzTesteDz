@@ -17,6 +17,7 @@ import { UserRegistrationComponent } from './pages/user-registration/user-regist
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { RequestsComponent } from './pages/requests/requests.component';
+import { ExtractsComponent } from './pages/extracts/extracts.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RequestsComponent } from './pages/requests/requests.component';
     UserRegistrationComponent,
     HomeComponent,
     NavbarComponent,
-    RequestsComponent
+    RequestsComponent,
+    ExtractsComponent
   ],
   imports: [
     BrowserModule,
