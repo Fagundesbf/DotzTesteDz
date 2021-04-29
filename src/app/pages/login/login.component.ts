@@ -45,12 +45,19 @@ export class LoginComponent implements OnInit {
         this.userForm.controls['email'].value,
         this.userForm.controls['senha'].value
         ).subscribe((resp)=>{
-          Swal.fire({
-            icon: 'success',
-            text: 'Login efetuado!'
-          }).then(()=>{
-            this.router.navigate(['/']);
-          });
+          if(resp.length > 0 ){
+            Swal.fire({
+              icon: 'success',
+              text: 'Login efetuado!'
+            }).then(()=>{
+              this.router.navigate(['/home']);
+            });
+          }else{
+            Swal.fire({
+              icon: 'error',
+              text: 'Usuario não encontrado!'
+            });
+          }
         })
     }
   }

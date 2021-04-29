@@ -132,6 +132,7 @@ export class UserRegistrationComponent implements OnInit {
               title: 'Oops...',
               text: 'Cadastro efetuado com sucesso!'
             }).then(()=>{
+              this.router.navigate(['home'])
 
 
             });
