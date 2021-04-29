@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-user-registration',
@@ -17,6 +18,7 @@ export class UserRegistrationComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
+    private serviceCep: UserService
     ) {
 
     this.userRegistrationForm = this.formBuilder.group({
@@ -28,7 +30,7 @@ export class UserRegistrationComponent implements OnInit {
       telefoneCelular: [''],
       email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
       senha: ['', [Validators.required, Validators.minLength(4)]],
-      confirmacaoSenha: ['', [Validators.required, Validators.minLength(4)]],
+      confirmacaoSenha: ['', [Validators.required]],
       cep: ['', [Validators.required]],
       logradouro: ['', [Validators.required]],
       numero: [''],
@@ -94,13 +96,24 @@ export class UserRegistrationComponent implements OnInit {
   submit(userRegistrationForm){
     this.isSubmitted = true;
     if(userRegistrationForm.status == "VALID"){
+      if(this.userRegistrationForm.controls['senha'].value != this.userRegistrationForm.controls['confirmacaoSenha'].value){
+          alert('as senhas são divergentes');
+      }
       console.log('userRegistrationForm', userRegistrationForm);
 
     }
   }
 
   buscarCep(){
-
+    this.serviceCep.buscarPorCep(
+      this.userRegistrationForm.controls['cep'].value
+    ).subscribe((res)=>{
+      console.log('funciona');
+      this.userRegistrationForm.controls['logradouro'].setValue(res.logradouro);
+      this.userRegistrationForm.controls['bairro'].setValue(res.bairro);
+      this.userRegistrationForm.controls['cidade'].setValue(res.localidade);
+      this.userRegistrationForm.controls['uf'].setValue(res.uf);
+    })
   }
 
 }
