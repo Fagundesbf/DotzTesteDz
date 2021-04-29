@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-user-registration',
@@ -97,10 +99,24 @@ export class UserRegistrationComponent implements OnInit {
     this.isSubmitted = true;
     if(userRegistrationForm.status == "VALID"){
       if(this.userRegistrationForm.controls['senha'].value != this.userRegistrationForm.controls['confirmacaoSenha'].value){
-          alert('as senhas são divergentes');
-      }
-      console.log('userRegistrationForm', userRegistrationForm);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'as senhas são divergentes!'
+          }).then(()=>{
+            this.userRegistrationForm.controls['senha'].setValue('');
+            this.userRegistrationForm.controls['confirmacaoSenha'].setValue('');
+          });
+      }else{
+        console.log('userRegistrationForm', userRegistrationForm);
+        Swal.fire({
+          icon: 'success',
+          title: 'Oops...',
+          text: 'Cadastro efetuado com sucesso!'
+        }).then(()=>{
 
+        });
+      }
     }
   }
 
@@ -115,5 +131,4 @@ export class UserRegistrationComponent implements OnInit {
       this.userRegistrationForm.controls['uf'].setValue(res.uf);
     })
   }
-
 }
