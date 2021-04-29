@@ -124,7 +124,7 @@ export class UserRegistrationComponent implements OnInit {
           "cidade": this.userRegistrationForm.controls['cidade'].value,
           "uf":  this.userRegistrationForm.controls['uf'].value,
           "bairro":  this.userRegistrationForm.controls['bairro'].value,
-        }
+        };
 
         this.serviceUser.cadastrarUsuario(dados).subscribe((resp)=>{
             Swal.fire({
