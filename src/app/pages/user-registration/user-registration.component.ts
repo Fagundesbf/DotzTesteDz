@@ -20,7 +20,7 @@ export class UserRegistrationComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private serviceCep: UserService
+    private serviceUser: UserService
     ) {
 
     this.userRegistrationForm = this.formBuilder.group({
@@ -108,20 +108,42 @@ export class UserRegistrationComponent implements OnInit {
             this.userRegistrationForm.controls['confirmacaoSenha'].setValue('');
           });
       }else{
-        console.log('userRegistrationForm', userRegistrationForm);
-        Swal.fire({
-          icon: 'success',
-          title: 'Oops...',
-          text: 'Cadastro efetuado com sucesso!'
-        }).then(()=>{
+        let dados=  {
+          "nomeCompleto":  this.userRegistrationForm.controls['nomeCompleto'].value,
+          "apelido":  this.userRegistrationForm.controls['apelido'].value,
+          "email":  this.userRegistrationForm.controls['email'].value,
+          "ddd":  this.userRegistrationForm.controls['dddTelefone'].value ? this.userRegistrationForm.controls['dddTelefone'].value : '',
+          "telefone":  this.userRegistrationForm.controls['telefone'].value,
+          "telefoneCelular":  this.userRegistrationForm.controls['telefoneCelular'].value,
+          "cpf":  this.userRegistrationForm.controls['cpf'].value,
+          "senha":  this.userRegistrationForm.controls['senha'].value,
+          "cep":  this.userRegistrationForm.controls['cep'].value,
+          "logradouro":  this.userRegistrationForm.controls['logradouro'].value,
+          "numero":  this.userRegistrationForm.controls['numero'].value ? this.userRegistrationForm.controls['numero'].value : 'S/N' ,
+          "complemento":  this.userRegistrationForm.controls['cep'].value,
+          "cidade": this.userRegistrationForm.controls['cidade'].value,
+          "uf":  this.userRegistrationForm.controls['uf'].value,
+          "bairro":  this.userRegistrationForm.controls['bairro'].value,
+        }
 
-        });
+        this.serviceUser.cadastrarUsuario(dados).subscribe((resp)=>{
+            Swal.fire({
+              icon: 'success',
+              title: 'Oops...',
+              text: 'Cadastro efetuado com sucesso!'
+            }).then(()=>{
+
+
+            });
+          })
+        console.log('userRegistrationForm', userRegistrationForm);
+
       }
     }
   }
 
   buscarCep(){
-    this.serviceCep.buscarPorCep(
+    this.serviceUser.buscarPorCep(
       this.userRegistrationForm.controls['cep'].value
     ).subscribe((res)=>{
       console.log('funciona');

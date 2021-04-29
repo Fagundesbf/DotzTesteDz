@@ -17,6 +17,23 @@ export class UserService {
     );
   }
 
+  buscarUsario(email, senha) {
+    return this.http.get<any>(
+      `${environment.apiInterna}/users?email=${email}&senha=${senha}`,
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+  }
+  cadastrarUsuario(usuario) {
+    return this.http.post<any>(
+      `${environment.apiInterna}/users`,usuario,
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+  }
+
   // obterAcessoSituacao(ativos: any) {
   //   return this.http.get<any>(
   //     `${environment.prucUrl}/perfil/obter-ativos-inativos`,
