@@ -1,0 +1,397 @@
+<!-- <div class="imagem"></div> -->
+<form
+  name="userRegistrationForm"
+  id="userRegistrationForm"
+  [formGroup]="userRegistrationForm"
+  autocomplete="off"
+  (ngSubmit)="submit(userRegistrationForm)"
+>
+  <div class="row mt-4 mb-4" align="center">
+    <div class="col-md-12">
+      <div class="card" style="width: 80%">
+        <div class="card-body">
+          <h3 class="card-title">Cadastro de Usuário</h3>
+          <div class="row mt-4" align="left">
+            <div class="col-md-4">
+              <span>Apelido:</span>
+              <input
+                type="text"
+                name="apelido"
+                formControlName="apelido"
+                id="apelido"
+                class="form-control"
+                placeholder="Ex: cruz"
+                [class.is-invalid]="
+                  apelido.invalid && (apelido.touched || isSubmitted)
+                "
+              />
+              <div *ngIf="apelido.invalid && (apelido.touched || isSubmitted)">
+                <span class="erro" *ngIf="apelido.errors.required"
+                  >Campo obrigatório</span
+                >
+              </div>
+            </div>
+            <div class="col-md-8">
+              <span> Nome completo:</span>
+              <input
+                type="text"
+                name="nomeCompleto"
+                formControlName="nomeCompleto"
+                id="nomeCompleto"
+                class="form-control"
+                placeholder="Ex: joão nacismento cruz"
+                [class.is-invalid]="
+                  nomeCompleto.invalid && (nomeCompleto.touched || isSubmitted)
+                "
+              />
+              <div
+                *ngIf="
+                  nomeCompleto.invalid && (nomeCompleto.touched || isSubmitted)
+                "
+              >
+                <span class="erro" *ngIf="nomeCompleto.errors.required"
+                  >Campo obrigatório</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2" align="left">
+            <div class="col-md-12">
+              <span> E-mail:</span>
+              <input
+                type="text"
+                name="email"
+                formControlName="email"
+                id="email"
+                class="form-control"
+                placeholder="Ex: contato@dominio.com.br"
+                [class.is-invalid]="
+                  email.invalid && (email.touched || isSubmitted)
+                "
+              />
+              <div *ngIf="email.invalid && (email.touched || isSubmitted)">
+                <span class="erro" *ngIf="email.errors.required"
+                  >Campo obrigatório</span
+                >
+                <span *ngIf="email.errors.pattern"
+                class="erro">E-mail Inválido</span>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2" align="left">
+            <div class="col-md-4">
+              <span> DDD's:</span>
+              <select
+                class="form-control form-control-sm custom-select custom-select-sm"
+                formControlName="dddTelefone"
+                [class.is-invalid]="dddTelefone.invalid && dddTelefone.touched"
+                id="dddTelefone"
+                name="dddTelefone"
+              >
+                <option value="" disabled>Selecione</option>
+                <option
+                  *ngFor="let dddTelefone of dddTelefones"
+                  [ngValue]="dddTelefone"
+                >
+                  {{ dddTelefone.sigla }}
+                </option>
+              </select>
+              <div *ngIf="dddTelefone.invalid && dddTelefone.touched">
+                <span class="erro" *ngIf="dddTelefone.errors.required"
+                  >Campo obrigatório</span
+                >
+              </div>
+            </div>
+            <div class="col-md-4">
+              <span> Telefone:</span>
+              <input
+                type="text"
+                name="telefone"
+                formControlName="telefone"
+                id="telefone"
+                class="form-control"
+                placeholder="Ex: 9999-9999"
+                [class.is-invalid]="
+                  telefone.invalid && (telefone.touched || isSubmitted)
+                "
+              />
+              <div
+                *ngIf="telefone.invalid && (telefone.touched || isSubmitted)"
+              >
+                <span class="erro" *ngIf="telefone.errors.required"
+                  >Campo obrigatório</span
+                >
+              </div>
+            </div>
+            <div class="col-md-4">
+              <span> Telefone Celular:</span>
+              <input
+                type="text"
+                name="telefoneCelular"
+                formControlName="telefoneCelular"
+                id="telefoneCelular"
+                class="form-control"
+                placeholder="Ex: 99999-9999"
+                [class.is-invalid]="
+                  telefoneCelular.invalid &&
+                  (telefoneCelular.touched || isSubmitted)
+                "
+              />
+              <div
+                *ngIf="
+                  telefoneCelular.invalid &&
+                  (telefoneCelular.touched || isSubmitted)
+                "
+              >
+                <span class="erro" *ngIf="telefoneCelular.errors.required"
+                  >Campo obrigatório</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2" align="left">
+            <div class="col-md-4">
+              <span> CPF</span>
+              <input
+                type="text"
+                name="cpf"
+                formControlName="cpf"
+                id="cpf"
+                class="form-control"
+                placeholder="Ex: 999.999.999-10"
+                [class.is-invalid]="cpf.invalid && (cpf.touched || isSubmitted)"
+              />
+              <div *ngIf="cpf.invalid && (cpf.touched || isSubmitted)">
+                <span class="erro" *ngIf="cpf.errors.required"
+                  >Campo obrigatório</span
+                >
+              </div>
+            </div>
+            <div class="col-md-4">
+              <span> Senha:</span>
+              <input
+                type="password"
+                name="senha"
+                formControlName="senha"
+                id="senha"
+                class="form-control"
+                [class.is-invalid]="
+                  senha.invalid && (senha.touched || isSubmitted)
+                "
+              />
+              <div *ngIf="senha.invalid && (senha.touched || isSubmitted)">
+                <span class="erro" *ngIf="senha.errors.required"
+                  >Campo obrigatório</span
+                >
+                <span
+                  class="erro"
+                  *ngIf="
+                    userRegistrationForm.controls['senha'].hasError('minlength')
+                  "
+                  >Senha Inválida</span
+                >
+              </div>
+            </div>
+            <div class="col-md-4">
+              <span> Confirmação de Senha:</span>
+              <input
+                type="password"
+                name="confirmacaoSenha"
+                formControlName="confirmacaoSenha"
+                id="confirmacaoSenha"
+                class="form-control"
+                [class.is-invalid]="
+                  confirmacaoSenha.invalid &&
+                  (confirmacaoSenha.touched || isSubmitted)
+                "
+              />
+              <div
+                *ngIf="
+                  confirmacaoSenha.invalid &&
+                  (confirmacaoSenha.touched || isSubmitted)
+                "
+              >
+                <span class="erro" *ngIf="confirmacaoSenha.errors.required"
+                  >Campo obrigatório</span
+                >
+                <span
+                  class="erro"
+                  *ngIf="
+                    userRegistrationForm.controls['confirmacaoSenha'].hasError(
+                      'minlength'
+                    )
+                  "
+                  >Senha Inválida</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4" align="left" >
+            <div class="col-md-12">
+              <fieldset>
+                <legend>Endereço:</legend>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <span>Cep:</span>
+                        <div class="input-group mb-3">
+                          <input type="text"
+                                 class="form-control"
+                                 formControlName="cep"
+                                 placeholder="99999-999"
+                                 [class.is-invalid]="cep.invalid && (cep.touched || isSubmitted)"
+                                 aria-label="Recipient's username"
+                                 aria-describedby="basic-addon2">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-primary" type="button" (click)="buscarCep()">
+                              <fa name="search" animation="none"> </fa>
+                            </button>
+                          </div>
+                        </div>
+                        <div *ngIf="cep.invalid && (cep.touched || isSubmitted)">
+                          <span class="erro input-button-right" *ngIf="cep.errors.required"
+                            >Campo obrigatório</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <span> Logradouro:</span>
+                        <input
+                          type="text"
+                          name="logradouro"
+                          formControlName="logradouro"
+                          id="logradouro"
+                          class="form-control"
+                          placeholder="Ex: Rua das ferragens"
+                          [class.is-invalid]="logradouro.invalid && (logradouro.touched || isSubmitted)"
+                        />
+                        <div *ngIf="logradouro.invalid && (logradouro.touched || isSubmitted)">
+                          <span class="erro" *ngIf="logradouro.errors.required"
+                            >Campo obrigatório</span
+                          >
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <span> Numero</span>
+                        <input
+                          type="text"
+                          name="numero"
+                          formControlName="numero"
+                          id="numero"
+                          class="form-control"
+                          placeholder="Ex: 99"
+                          [class.is-invalid]="numero.invalid && (numero.touched || isSubmitted)"
+                        />
+                        <div *ngIf="numero.invalid && (numero.touched || isSubmitted)">
+                          <span class="erro" *ngIf="numero.errors.required"
+                            >Campo obrigatório</span>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <span> Complemento:</span>
+                        <input
+                          type="text"
+                          name="complemento"
+                          formControlName="complemento"
+                          id="complemento"
+                          class="form-control"
+                          placeholder="Ex: Casa 2"
+                          [class.is-invalid]="complemento.invalid && (complemento.touched || isSubmitted)"
+                        />
+                        <div *ngIf="complemento.invalid && (complemento.touched || isSubmitted)">
+                          <span class="erro" *ngIf="complemento.errors.required"
+                            >Campo obrigatório</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt-2">
+                      <div class="col-md-6">
+                        <span> Cidade</span>
+                        <input
+                          type="text"
+                          name="cidade"
+                          formControlName="cidade"
+                          id="cidade"
+                          class="form-control"
+                          placeholder="Ex: São joão del rey"
+                          [class.is-invalid]="cidade.invalid && (cidade.touched || isSubmitted)"
+                        />
+                        <div *ngIf="cidade.invalid && (cidade.touched || isSubmitted)">
+                          <span class="erro" *ngIf="cidade.errors.required"
+                            >Campo obrigatório</span
+                          >
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <span> UF</span>
+                        <input
+                          type="text"
+                          name="uf"
+                          formControlName="uf"
+                          id="uf"
+                          class="form-control"
+                          placeholder="Ex: MG"
+                          [class.is-invalid]="uf.invalid && (uf.touched || isSubmitted)"
+                        />
+                        <div *ngIf="uf.invalid && (uf.touched || isSubmitted)">
+                          <span class="erro" *ngIf="uf.errors.required"
+                            >Campo obrigatório</span
+                          >
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <span> Bairro:</span>
+                        <input
+                          type="text"
+                          name="bairro"
+                          formControlName="bairro"
+                          id="bairro"
+                          class="form-control"
+                          placeholder="Ex: Jardim das Pedras"
+                          [class.is-invalid]="bairro.invalid && (bairro.touched || isSubmitted)"
+                        />
+                        <div *ngIf="bairro.invalid && (bairro.touched || isSubmitted)">
+                          <span class="erro" *ngIf="bairro.errors.required"
+                            >Campo obrigatório</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                      <div class="col-md-4">
+                        <div class="mt-4">
+                          <button
+                            type="button"
+                            name="acessar"
+                            id="acessar"
+                            [routerLink]="['/login']"
+                            class="btn btn-sm btn-secondary btn-full"
+                          >
+                            Acessar
+                          </button>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="mt-4">
+                          <button
+                            type="submit"
+                            name="cadastrar"
+                            id="cadastrar"
+                            class="btn btn-sm btn-primary btn-full"
+                          >
+                            cadastrar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+              </fieldset>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

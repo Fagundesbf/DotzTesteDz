@@ -8,8 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
   userForm: FormGroup;
+  public emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   isSubmitted = false;
 
   constructor(
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     ) {
 
     this.userForm = this.formBuilder.group({
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
       senha: ['', [Validators.required, Validators.minLength(4)]],
     });
     }
@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
   }
 
   submit(userForm){
+    this.isSubmitted = true;
     if(userForm.status == "VALID"){
       console.log('userForm', userForm);
 

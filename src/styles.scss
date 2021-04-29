@@ -20,9 +20,19 @@
 }
 
 html{
-    overflow: hidden;
+    overflow-x: hidden;
+    // overflow-y: auto;
 }
 
+.color-thema{
+    color: orange;
+}
 .erro{
     color: red;
+}
+
+
+.input-button-right {
+  position: relative;
+  bottom: 1pc;
 }
