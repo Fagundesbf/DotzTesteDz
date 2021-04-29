@@ -1,0 +1,68 @@
+
+<div class="imagem"></div>
+<form
+  name="userForm"
+  id="userForm"
+  [formGroup]="userForm"
+  autocomplete="off"
+  (ngSubmit)="submit(userForm)"
+>
+    <div class="row margin-top-10rem" align="center" >
+        <div class="col-md-12">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h3 class="card-title">Login</h3>
+                  <div class="row" align="left">
+                      <div class="col-md-12">
+                          <span> <fa name="user" animation="none"></fa> E-mail:</span>
+                            <input type="text" 
+                                   name="email"
+                                   formControlName="email"
+                                   id="email"
+                                   class="form-control" 
+                                   placeholder="Ex.contato@dominio.com.br"
+                                   [class.is-invalid]="email.invalid && (email.touched || isSubmitted)"
+                                   >
+                                   <div *ngIf="email.invalid && (email.touched || isSubmitted)">
+                                    <span class="erro"
+                                          *ngIf="email.errors.required">Campo obrigatório</span>
+                                  </div>
+                      </div>
+                  </div>
+                  <div class="row mt-1" align="left">
+                      <div class="col-md-12">
+                         <span><fa name="key" animation="none"></fa> Senha:</span>
+                            <input type="password" 
+                                   name="senha" 
+                                   formControlName="senha"
+                                   id="senha" 
+                                   class="form-control"
+                                   [class.is-invalid]="senha.invalid && (senha.touched || isSubmitted)">
+                            <div *ngIf="senha.invalid && (senha.touched || isSubmitted)">
+                                <span class="erro"
+                                      *ngIf="senha.errors.required">Campo obrigatório</span>
+                                <span class="erro"
+                                      *ngIf="userForm.controls['senha'].hasError('minlength')">Senha Inválida</span>
+                              </div>
+                      </div>
+                  </div>
+                  <div class="row mt-1" align="left">
+                      <div class="col-md-12">
+                        <span class="font-size-13">Ainda não possui conta? <span class="font-size-16"> Cadastre-se</span></span>      
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-12">
+                          <div class="mt-4">
+                              <button type="submit" 
+                                      name="acessar"
+                                      id="acessar"
+                                      class="btn btn-sm btn-primary btn-full">Acessar</button>
+                          </div>
+                      </div>
+                  </div>                  
+                </div>
+              </div>
+        </div>
+    </div>
+</form>
