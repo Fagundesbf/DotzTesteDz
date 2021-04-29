@@ -33,14 +33,4 @@ export class UserService {
       }
     );
   }
-
-  // obterAcessoSituacao(ativos: any) {
-  //   return this.http.get<any>(
-  //     `${environment.prucUrl}/perfil/obter-ativos-inativos`,
-  //     {
-  //       headers: this.httpHeaders,
-  //       params: { ativos },
-  //     }
-  //   );
-  // }
 }
