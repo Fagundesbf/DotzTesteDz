@@ -1,3 +1,4 @@
+import { SaleComponent } from './pages/sale/sale.component';
 import { ExtractsComponent } from './pages/extracts/extracts.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'extracts',
     component: ExtractsComponent,
+  },
+  {
+    path: 'sale',
+    component: SaleComponent,
   },
   {
     path: '**',

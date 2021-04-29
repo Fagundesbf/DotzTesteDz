@@ -18,6 +18,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { RequestsComponent } from './pages/requests/requests.component';
 import { ExtractsComponent } from './pages/extracts/extracts.component';
+import { SaleComponent } from './pages/sale/sale.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ExtractsComponent } from './pages/extracts/extracts.component';
     HomeComponent,
     NavbarComponent,
     RequestsComponent,
-    ExtractsComponent
+    ExtractsComponent,
+    SaleComponent
   ],
   imports: [
     BrowserModule,
