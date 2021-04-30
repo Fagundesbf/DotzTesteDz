@@ -60,12 +60,24 @@
     </div>
   </div>
 </div>
-<!-- <div class="footer text-center">
-  <div class="d-flex justify-content-center">
-    <div class="col-md-12">
-      <div class="text-center">
-            LEgal
+
+<div class="row mt-4">
+  <div class="col-md-12">
+    <h5 class="text-center"> Produtos</h5>
+  </div>
+</div>
+<div class="row pl-2">
+  <div class="col-md-3" *ngFor="let produto of produtos; let i= index">
+    <div class="card m-4" >
+      <h5 class="card-title text-center">{{produto.nomeProduto}}</h5>
+      <div class="card-body card-body-size ">
+        <p class="card-text">{{produto.descricao}}</p>
+        <p class="card-text">dz: ${{produto.valorProduto}}</p>
+        <p class="card-text">status: ${{produto.statusProduto}}</p>
+        <div *ngIf="produto.statusProduto == 'Disponível'" >
+          <button id="adicionar" name="adicionar" (click)="adicionarPedido(produto)" class="btn btn-sm btn-primary"><fa name="cart-plus" animation="none"></fa></button>
+        </div>
       </div>
     </div>
   </div>
-</div> -->
+</div>

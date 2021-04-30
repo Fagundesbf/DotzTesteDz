@@ -12,7 +12,16 @@
         <p class="card-text">{{pedido.descricao}}</p>
         <p class="card-text">status:{{pedido.statusProduto}}</p>
         <p class="card-text">dz: ${{pedido.valorProduto}}</p>
+        <div *ngIf="pedido.statusProduto == 'Em separação'" >
+          <button id="remover" name="remover" (click)="removerPedido(pedido)" class="btn btn-sm btn-danger"><fa name="trash" animation="none"></fa></button>
+        </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="row mt-4" *ngIf="!pedidos.length > 0" >
+  <div class="col-md-12 text-center">
+      <label> Não possui pedidos..</label>
   </div>
 </div>

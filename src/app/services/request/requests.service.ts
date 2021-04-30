@@ -17,4 +17,46 @@ export class RequestsService {
     );
   }
 
+  buscarProdutos() {
+    return this.http.get<any>(
+      `${environment.apiInterna}/requestsCart`,
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+  }
+
+  cadastrarProdutoCarinho(produto) {
+    return this.http.post<any>(
+      `${environment.apiInterna}/requests`,produto,
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+  }
+  cadastrarProduto(produto) {
+    return this.http.post<any>(
+      `${environment.apiInterna}/requestsCart`,produto,
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+  }
+  deleteProdutoCarinho(produto) {
+    return this.http.delete<any>(
+      `${environment.apiInterna}/requests/${produto}`,
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+  }
+  deleteProduto(produto) {
+    return this.http.delete<any>(
+      `${environment.apiInterna}/requestsCart/${produto}`,
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+  }
+
 }

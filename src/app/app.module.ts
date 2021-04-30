@@ -19,6 +19,7 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { RequestsComponent } from './pages/requests/requests.component';
 import { ExtractsComponent } from './pages/extracts/extracts.component';
 import { SaleComponent } from './pages/sale/sale.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,14 @@ import { SaleComponent } from './pages/sale/sale.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgCircleProgressModule.forRoot({
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    })
 
   ],
   providers: [],

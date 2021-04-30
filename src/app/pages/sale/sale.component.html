@@ -1,1 +1,50 @@
 <app-navbar></app-navbar>
+<div class="row mt-4">
+  <div class="col-md-12">
+    <h2 class="text-center">Saldos</h2>
+  </div>
+</div>
+<div class="row" align="center">
+  <div class="col-md-6">
+    <circle-progress
+      [percent]="3000"
+      [radius]="150"
+      [outerStrokeWidth]="16"
+      [innerStrokeWidth]="0"
+      [outerStrokeColor]="'#5555'"
+      backgroundColor="orange"
+      [animation]="true"
+      units="Dz"
+      [showSubtitle]="false"
+      unitsFontSize="32"
+      [animationDuration]="600"
+    ></circle-progress>
+    <div class="row">
+      <div class="col-md-12">
+        <label> dotz disponíveis</label>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <circle-progress
+      [percent]="3000"
+      [radius]="150"
+      [outerStrokeWidth]="16"
+      [innerStrokeWidth]="0"
+      [outerStrokeColor]="'#5555'"
+      backgroundColor="#040218"
+      [animation]="true"
+      units="Dz"
+      [showSubtitle]="false"
+      unitsFontSize="32"
+      titleColor="orange"
+      unitsColor="orange"
+      [animationDuration]="600"
+    ></circle-progress>
+    <div class="row">
+      <div class="col-md-12">
+        <label> dotz ultilizados </label>
+      </div>
+    </div>
+  </div>
+</div>
