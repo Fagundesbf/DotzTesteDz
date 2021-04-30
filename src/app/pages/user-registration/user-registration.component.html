@@ -80,22 +80,18 @@
           </div>
           <div class="row mt-2" align="left">
             <div class="col-md-4">
-              <span> DDD's:</span>
-              <select
-                class="form-control form-control-sm custom-select custom-select-sm"
-                formControlName="dddTelefone"
-                [class.is-invalid]="dddTelefone.invalid && dddTelefone.touched"
-                id="dddTelefone"
-                name="dddTelefone"
-              >
-                <option value="" disabled>Selecione</option>
-                <option
-                  *ngFor="let dddTelefone of dddTelefones"
-                  [ngValue]="dddTelefone"
-                >
-                  {{ dddTelefone.sigla }}
-                </option>
-              </select>
+              <span> DDD:</span>
+              <input
+              type="text"
+              name="dddTelefone"
+              formControlName="dddTelefone"
+              id="dddTelefone"
+              class="form-control"
+              placeholder="Ex: 000"
+              [class.is-invalid]="
+                dddTelefone.invalid && (dddTelefone.touched || isSubmitted)
+              "
+            />
               <div *ngIf="dddTelefone.invalid && dddTelefone.touched">
                 <span class="erro" *ngIf="dddTelefone.errors.required"
                   >Campo obrigatório</span
@@ -109,6 +105,7 @@
                 name="telefone"
                 formControlName="telefone"
                 id="telefone"
+                mask="0000-0000"
                 class="form-control"
                 placeholder="Ex: 9999-9999"
                 [class.is-invalid]="
@@ -128,6 +125,7 @@
               <input
                 type="text"
                 name="telefoneCelular"
+                mask="00000-0000"
                 formControlName="telefoneCelular"
                 id="telefoneCelular"
                 class="form-control"
@@ -157,8 +155,9 @@
                 name="cpf"
                 formControlName="cpf"
                 id="cpf"
+                mask="000.000.000-00"
                 class="form-control"
-                placeholder="Ex: 999.999.999-10"
+                placeholder="Ex: 999.999.999-99"
                 [class.is-invalid]="cpf.invalid && (cpf.touched || isSubmitted)"
               />
               <div *ngIf="cpf.invalid && (cpf.touched || isSubmitted)">
@@ -237,6 +236,7 @@
                           <input type="text"
                                  class="form-control"
                                  formControlName="cep"
+                                 mask="00000-000"
                                  placeholder="99999-999"
                                  [class.is-invalid]="cep.invalid && (cep.touched || isSubmitted)"
                                  aria-label="Recipient's username"

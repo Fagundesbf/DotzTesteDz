@@ -10,6 +10,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //FONT-AWESOME
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
+import { NgCircleProgressModule } from 'ng-circle-progress';
+
+
 // PAGES
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -19,8 +22,9 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { RequestsComponent } from './pages/requests/requests.component';
 import { ExtractsComponent } from './pages/extracts/extracts.component';
 import { SaleComponent } from './pages/sale/sale.component';
-import { NgCircleProgressModule } from 'ng-circle-progress';
+import {IConfig, NgxMaskModule} from 'ngx-mask';
 
+// export const options: Partial<IConfig> | (() => Partial<IConfig>);
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +44,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxMaskModule.forRoot(),
     NgCircleProgressModule.forRoot({
       radius: 100,
       outerStrokeWidth: 16,

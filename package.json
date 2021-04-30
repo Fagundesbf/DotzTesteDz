@@ -25,6 +25,7 @@
     "jquery": "^3.6.0",
     "ng-circle-progress": "^1.5.1",
     "ngx-bootstrap": "^6.2.0",
+    "ngx-mask": "^8.0.9",
     "rxjs": "~6.4.0",
     "sweetalert2": "^10.16.6",
     "tslib": "^1.9.0",

@@ -129,16 +129,11 @@ export class UserRegistrationComponent implements OnInit {
         this.serviceUser.cadastrarUsuario(dados).subscribe((resp)=>{
             Swal.fire({
               icon: 'success',
-              title: 'Oops...',
               text: 'Cadastro efetuado com sucesso!'
             }).then(()=>{
               this.router.navigate(['home'])
-
-
             });
           })
-        console.log('userRegistrationForm', userRegistrationForm);
-
       }
     }
   }
@@ -147,11 +142,11 @@ export class UserRegistrationComponent implements OnInit {
     this.serviceUser.buscarPorCep(
       this.userRegistrationForm.controls['cep'].value
     ).subscribe((res)=>{
-      console.log('funciona');
       this.userRegistrationForm.controls['logradouro'].setValue(res.logradouro);
       this.userRegistrationForm.controls['bairro'].setValue(res.bairro);
       this.userRegistrationForm.controls['cidade'].setValue(res.localidade);
       this.userRegistrationForm.controls['uf'].setValue(res.uf);
+      this.userRegistrationForm.controls['dddTelefone'].setValue(res.ddd);
     })
   }
 }
