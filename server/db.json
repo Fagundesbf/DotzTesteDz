@@ -1,0 +1,157 @@
+{
+  "users": [
+    {
+      "nomeCompleto": "Fabio barros Fagundes",
+      "apelido": "Fagundes",
+      "email": "fabio@email.com",
+      "ddd": "",
+      "telefone": "29954796",
+      "telefoneCelular": "952767724",
+      "cpf": "41499542836",
+      "senha": "1234",
+      "cep": "02363015",
+      "logradouro": "Rua Begônia",
+      "numero": "10",
+      "complemento": "02363015",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "bairro": "Jardim Flor de Maio",
+      "id": 1
+    },
+    {
+      "nomeCompleto": "Paulo Vinicios",
+      "apelido": "Fera",
+      "email": "paulo@email.com",
+      "ddd": "11",
+      "telefone": "95276772",
+      "telefoneCelular": "",
+      "cpf": "12345648798",
+      "senha": "1234",
+      "cep": "04827190",
+      "logradouro": "Rua Maria Marta Oliveira",
+      "numero": "147",
+      "complemento": "04827190",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "bairro": "Jardim Cliper",
+      "id": 2
+    },
+    {
+      "nomeCompleto": "Thiago Hi",
+      "apelido": "Thiago",
+      "email": "fabio@gmail.com",
+      "ddd": "11",
+      "telefone": "",
+      "telefoneCelular": "",
+      "cpf": "41499542836",
+      "senha": "123456789",
+      "cep": "02363015",
+      "logradouro": "Rua Begônia",
+      "numero": "10",
+      "complemento": "02363015",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "bairro": "Jardim Flor de Maio",
+      "id": 3
+    }
+  ],
+  "requests": [],
+  "requestsCart": [
+    {
+      "id": 3,
+      "nomeProduto": "Produto C",
+      "valorProduto": 150,
+      "statusProduto": "indiponível",
+      "descricao": " Protudo D, você recebera menos dotz",
+      "tempo": null
+    },
+    {
+      "id": 4,
+      "nomeProduto": "Produto D",
+      "valorProduto": 200,
+      "statusProduto": "indiponível",
+      "descricao": " Protudo D, você recebera menos dotz",
+      "tempo": null
+    },
+    {
+      "nomeProduto": "Produto G",
+      "valorProduto": 50,
+      "statusProduto": "Disponível",
+      "descricao": " Protudo G, você recebera menos dotz",
+      "tempo": 0,
+      "id": 9
+    },
+    {
+      "nomeProduto": "Produto L",
+      "valorProduto": 50,
+      "statusProduto": "Disponível",
+      "descricao": " Protudo L, você recebera menos dotz",
+      "tempo": 0,
+      "id": 12
+    },
+    {
+      "nomeProduto": "Produto J",
+      "valorProduto": 40,
+      "statusProduto": "Disponível",
+      "descricao": " Protudo J, você recebera menos dotz",
+      "tempo": 0,
+      "id": 13
+    },
+    {
+      "nomeProduto": "Produto B",
+      "valorProduto": 200,
+      "statusProduto": "Disponível",
+      "descricao": " Protudo B, você recebera menos dotz",
+      "tempo": 0,
+      "id": 14
+    },
+    {
+      "nomeProduto": "Produto F",
+      "valorProduto": 300,
+      "statusProduto": "Disponível",
+      "descricao": " Protudo D, você recebera menos dotz",
+      "tempo": 0,
+      "id": 15
+    },
+    {
+      "nomeProduto": "Produto H",
+      "valorProduto": 500,
+      "statusProduto": "Disponível",
+      "descricao": " Protudo H, você recebera menos dotz",
+      "tempo": 0,
+      "id": 16
+    },
+    {
+      "nomeProduto": "Produto M",
+      "valorProduto": 59,
+      "statusProduto": "Disponível",
+      "descricao": " Protudo M, você recebera menos dotz",
+      "tempo": 0,
+      "id": 17
+    },
+    {
+      "nomeProduto": "Produto I",
+      "valorProduto": 80,
+      "statusProduto": "Disponível",
+      "descricao": " Protudo I, você recebera menos dotz",
+      "tempo": 0,
+      "id": 18
+    },
+    {
+      "nomeProduto": "Produto A",
+      "valorProduto": 600,
+      "statusProduto": "Disponível",
+      "descricao": " Protudo A, você recebera menos dotz",
+      "tempo": 0,
+      "id": 19
+    },
+    {
+      "nomeProduto": "Produto K",
+      "valorProduto": 90,
+      "statusProduto": "Disponível",
+      "descricao": " Protudo K, você recebera menos dotz",
+      "tempo": 0,
+      "id": 20
+    }
+  ]
+}
