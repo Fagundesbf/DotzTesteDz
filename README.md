@@ -17,7 +17,6 @@ Acessar a pasta  `Server`, Instalar biblioteca global via terminal
 [JSON Server](https://www.npmjs.com/package/json-server), Após instalar basta rodar no terminal  `json-server --watch db.json` acessar `http://localhost:3000`
 
 
-
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -28,9 +27,6 @@ Usuário: `fabio@email.com`,
 Senha:  `1234`
 
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 
 
