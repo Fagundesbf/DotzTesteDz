@@ -1,13 +1,20 @@
 # Dotz
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
+Este project foi generado com [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
+
+## Objetivo 
+
+Teste tecnico para a Empresa Dotz vaga Pleno. 
+
+- Criar uma página de listagem de produtos onde poderá excluir ou adicionar ao carrinho.
+
+
 
 ## Rodar projeto localmente.
 Acessar raiz do projeto e digitar no terminal `npm i `
 
 Acessar a pasta  `Server`, Instalar biblioteca global via terminal
 [JSON Server](https://www.npmjs.com/package/json-server), Após instalar basta rodar no terminal  `json-server --watch db.json` acessar `http://localhost:3000`
-
 
 
 
@@ -25,18 +32,5 @@ Senha:  `1234`
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
